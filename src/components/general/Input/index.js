@@ -1,9 +1,9 @@
 import React from 'react';
 import StyledInput from './styles';
 
-const Input = ({text}) => {
+const Input = ({text, type, required}) => {
     return (
-        <StyledInput placeholder={text} />
+        <StyledInput placeholder={text} type={type || "text"} required={required || false}/>
     );
 }
 
