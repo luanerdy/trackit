@@ -46,6 +46,7 @@ const Today = () => {
 			</Container>
 			{dayHabits.map((h) => (
 				<DayHabit
+                    key={h.id}
 					done={h.done}
 					name={h.name}
 					currentSequence={h.currentSequence}
