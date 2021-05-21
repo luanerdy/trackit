@@ -18,7 +18,7 @@ const TopBar = () => {
 	return (
 		<StyledTopBar>
 			<Link to="/hoje"><img width="100px" src="./img/icon_white.svg" /></Link>
-			<Container horizontal width={110}>
+			<Container horizontal width="110px">
 				<Avatar
 					width={50}
 					src={image}

@@ -3,8 +3,9 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 import TopBar from './components/TopBar';
 import Menu from './components/Menu';
-import { BrowserRouter, Switch, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import UserContext from './contexts/UserContext';
+import Habits from './components/Habits';
 
 const App = () => {
 	const [userData, setUserData] = useState('');
@@ -46,13 +47,16 @@ const App = () => {
 				<Route path="/cadastro" exact>
 					<SignUp verifyLogin={verifyLogin} />
 				</Route>
-				<UserContext.Provider value={{ userData, verifyLogin, logout, percentage }}>
+				<UserContext.Provider
+					value={{ userData, verifyLogin, logout, percentage }}
+				>
 					<Route path="/hoje" exact>
 						<TopBar />
 						<Menu />
 					</Route>
 					<Route path="/habitos" exact>
 						<TopBar />
+						<Habits />
 						<Menu />
 					</Route>
 					<Route path="/historico" exact>

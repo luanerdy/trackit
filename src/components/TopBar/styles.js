@@ -12,6 +12,8 @@ const StyledTopBar = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 10px 18px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .15);
+    z-index: 20;
 `;
 
 export default StyledTopBar;

@@ -18,38 +18,40 @@ const Login = ({ setUserData, verifyLogin }) => {
 	}, [history]);
 
 	return (
-		<Container height={400}>
-			<img width="180px" src="./img/logo.svg" />
-			<Form
-				width={300}
-				onSubmit={(event) =>
-					handleSubmit(
-						event,
-						email,
-						password,
-						history,
-						setDisabled,
-						setUserData,
-						setPassword
-					)
-				}
-				disabled={disabled}
-			>
-				<Input
-					text="email"
-					type="email"
-					required
-					data={{ value: email, setValue: setEmail }}
-				/>
-				<Input
-					text="senha"
-					type="password"
-					required
-					data={{ value: password, setValue: setPassword }}
-				/>
-				<Button text="Entrar" type="submit" />
-			</Form>
-			<Go to="/cadastro">Não tem uma conta? Cadastre-se!</Go>
+		<Container justify="center" height="100vh">
+			<Container height="400px">
+				<img width="180px" src="./img/logo.svg" />
+				<Form
+					width={300}
+					onSubmit={(event) =>
+						handleSubmit(
+							event,
+							email,
+							password,
+							history,
+							setDisabled,
+							setUserData,
+							setPassword
+						)
+					}
+					disabled={disabled}
+				>
+					<Input
+						text="email"
+						type="email"
+						required
+						data={{ value: email, setValue: setEmail }}
+					/>
+					<Input
+						text="senha"
+						type="password"
+						required
+						data={{ value: password, setValue: setPassword }}
+					/>
+					<Button text="Entrar" type="submit" />
+				</Form>
+				<Go to="/cadastro">Não tem uma conta? Cadastre-se!</Go>
+			</Container>
 		</Container>
 	);
 };

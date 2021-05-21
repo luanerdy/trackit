@@ -13,6 +13,7 @@ const StyledMenu = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0 36px;
+    z-index: 20;
 `;
 
 export default StyledMenu;
