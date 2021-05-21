@@ -1,20 +1,41 @@
-import React from 'react';
-import Container from '../../general/Container';
-import { FiTrash2 } from "react-icons/fi";
+import axios from 'axios';
+import React, { useContext } from 'react';
+import Habit from './Habit';
+import UserContext from '../../../contexts/UserContext';
 
-const HabitList = () => {
+const HabitList = ({ habits }) => {
+	const {
+		userData: { token },
+	} = useContext(UserContext);
+
+	const deleteHabit = (id) => {
+		const config = {
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		};
+
+		if (window.confirm('Deseja deletar o Hábito?')) {
+			axios
+				.delete(
+					`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}`,
+					config
+				)
+				.catch((err) => alert('Erro! Tente Novamente!'));
+		}
+	};
+
 	return (
-		<Container
-			margin="5px 0"
-			height="90px"
-			bgColor="#fff"
-			radius="5px"
-			horizontal
-			padding="14px"
-		>
-			<Container width="234px"></Container>
-			<Container width="15px"><FiTrash2 cursor="pointer" onClick={() => alert()} /></Container>
-		</Container>
+		<>
+			{habits.map((habit) => (
+				<Habit
+					onClick={() => deleteHabit(habit.id)}
+					key={habit.id}
+					name={habit.name}
+					days={habit.days}
+				/>
+			))}
+		</>
 	);
 };
 

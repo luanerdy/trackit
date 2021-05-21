@@ -24,7 +24,7 @@ const SignUp = ({ verifyLogin }) => {
 			<Container height="500px">
 				<img width="180px" src="./img/logo.svg" />
 				<Form
-					width={300}
+					width="300px"
 					onSubmit={(event) =>
 						handleSubmit(
 							event,

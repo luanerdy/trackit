@@ -11,9 +11,9 @@ const StyledButton = styled.button`
     height: ${props => props.height ? `${props.height}px` : '45px'};
     margin: 3px;
     border-radius: ${props => props.radius ? `${props.radius}%` : '5px'};
-    border: none;
+    border: ${props => props.border ? props.border : 'none'};
     background-color: ${props => props.color ? props.color : '#52B6FF'};
-    color: white;
+    color: ${props => props.fColor ? props.fColor : 'white'};
     font-size: ${props => props.font ? props.font : 21}px;
 
     &:disabled {

@@ -22,7 +22,7 @@ const Login = ({ setUserData, verifyLogin }) => {
 			<Container height="400px">
 				<img width="180px" src="./img/logo.svg" />
 				<Form
-					width={300}
+					width="300px"
 					onSubmit={(event) =>
 						handleSubmit(
 							event,

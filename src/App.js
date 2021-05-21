@@ -6,6 +6,8 @@ import Menu from './components/Menu';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import UserContext from './contexts/UserContext';
 import Habits from './components/Habits';
+import History from './components/History';
+import Today from './components/Today';
 
 const App = () => {
 	const [userData, setUserData] = useState('');
@@ -52,6 +54,7 @@ const App = () => {
 				>
 					<Route path="/hoje" exact>
 						<TopBar />
+						<Today />
 						<Menu />
 					</Route>
 					<Route path="/habitos" exact>
@@ -61,6 +64,7 @@ const App = () => {
 					</Route>
 					<Route path="/historico" exact>
 						<TopBar />
+						<History />
 						<Menu />
 					</Route>
 				</UserContext.Provider>

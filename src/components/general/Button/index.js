@@ -1,16 +1,30 @@
-import React, { Children } from 'react';
+import React from 'react';
 import Loader from 'react-loader-spinner';
 import StyledButton from './styles';
 
-const Button = ({ text, disabled, width, height, color, font, radius, children, onClick }) => {
+const Button = ({
+	text,
+	disabled,
+	width,
+	height,
+	color,
+	font,
+	radius,
+	children,
+	onClick,
+	fColor,
+	border,
+}) => {
 	return (
 		<StyledButton
 			disabled={disabled}
 			width={width}
 			height={height}
 			color={color}
+			fColor={fColor}
 			font={font}
 			radius={radius}
+			border={border}
 			onClick={onClick}
 		>
 			{disabled ? (

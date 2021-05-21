@@ -1,9 +1,9 @@
 import React from 'react';
 import StyledTitle from './styles';
 
-const Message = ({text}) => {
+const Message = ({text, size, color}) => {
     return (
-        <StyledTitle>
+        <StyledTitle size={size} color={color}>
             {text}
         </StyledTitle>
     );

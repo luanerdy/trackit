@@ -12,7 +12,9 @@ const Container = ({
 	justify,
 	margin,
 	minH,
-	minW
+	minW,
+	maxW,
+	align
 }) => {
 	return (
 		<StyledContainer
@@ -24,8 +26,10 @@ const Container = ({
 			padding={padding}
 			margin={margin}
 			justify={justify}
+			align={align}
 			minH={minH}
 			minW={minW}
+			maxW={maxW}
 		>
 			{children}
 		</StyledContainer>
