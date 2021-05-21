@@ -1,23 +1,57 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Input from '../general/Input';
 import Button from '../general/Button';
 import Container from '../general/Container';
-import Logo from '../general/Logo';
 import Form from '../general/Form';
 import Go from '../general/Go';
+import handleSubmit from './_handleSubmit';
+import { useHistory } from 'react-router';
 
-const Login = () => {
-    return (
-        <Container height={400}>
-            <Logo width={180} />
-            <Form width={300}>
-                <Input text="email" type="email" required />
-                <Input text="senha" type="password" required />
-                <Button text="Entrar" type="submit" />
-            </Form>
-            <Go to="/cadastro">Não tem uma conta? Cadastre-se!</Go>
-        </Container>
-    );
-}
+const Login = ({ setUserData, verifyLogin }) => {
+	const [disabled, setDisabled] = useState(false);
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const history = useHistory();
+
+	useEffect(() => {
+		verifyLogin(history);
+	}, [history]);
+
+	return (
+		<Container height={400}>
+			<img width="180px" src="./img/logo.svg" />
+			<Form
+				width={300}
+				onSubmit={(event) =>
+					handleSubmit(
+						event,
+						email,
+						password,
+						history,
+						setDisabled,
+						setUserData,
+						setPassword
+					)
+				}
+				disabled={disabled}
+			>
+				<Input
+					text="email"
+					type="email"
+					required
+					data={{ value: email, setValue: setEmail }}
+				/>
+				<Input
+					text="senha"
+					type="password"
+					required
+					data={{ value: password, setValue: setPassword }}
+				/>
+				<Button text="Entrar" type="submit" />
+			</Form>
+			<Go to="/cadastro">Não tem uma conta? Cadastre-se!</Go>
+		</Container>
+	);
+};
 
 export default Login;

@@ -1,10 +1,12 @@
 import React from 'react';
 import StyledForm from './styles';
 
-const Form = ({children, width}) => {
+const Form = ({children, width, onSubmit, disabled}) => {
+    const elements = React.Children.toArray(children);
+
     return (
-        <StyledForm width={width}>
-            {children}
+        <StyledForm width={width} onSubmit={onSubmit}>
+            {elements.map(e => React.cloneElement(e, {disabled}))}
         </StyledForm>
     );
 }

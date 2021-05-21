@@ -8,9 +8,19 @@ const StyledInput = styled.input`
     border: 1px solid #D4D4D4;
     font-size: 20px;
     padding: 9px;
+    background-color: white;
 
     &::placeholder {
         color: #D4D4D4;
+    }
+    
+    &:disabled {
+        background-color: #F2F2F2;
+        color: #AFAFAF;
+    }
+
+    &:focus {
+        outline-color: #52B6FF;
     }
 `;
 
