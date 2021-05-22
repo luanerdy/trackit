@@ -14,10 +14,14 @@ const Container = ({
 	minH,
 	minW,
 	maxW,
-	align
+	align,
+	onClick,
+	cursor
 }) => {
 	return (
 		<StyledContainer
+			cursor={cursor}
+			onClick={onClick}
 			width={width}
 			height={height}
 			horizontal={horizontal}

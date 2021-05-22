@@ -50,7 +50,7 @@ const App = () => {
 					<SignUp verifyLogin={verifyLogin} />
 				</Route>
 				<UserContext.Provider
-					value={{ userData, verifyLogin, logout, percentage }}
+					value={{ userData, verifyLogin, logout, percentage, setPercentage }}
 				>
 					<Route path="/hoje" exact>
 						<TopBar />

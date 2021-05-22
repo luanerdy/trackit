@@ -14,6 +14,7 @@ const StyledContainer = styled.div`
 	border-radius: ${(props) => (props.radius ? props.radius : '0')};
 	padding: ${(props) => (props.padding ? props.padding : '0')};
 	margin: ${(props) => (props.margin ? props.margin : '0')};
+	cursor: ${(props) => (props.cursor ? props.cursor : 'auto')};
 `;
 
 export default StyledContainer;
