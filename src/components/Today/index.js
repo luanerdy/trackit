@@ -32,6 +32,8 @@ const Today = () => {
 			)
 			.then((res) => {
 				setDayHabits(res.data);
+				const checked = dayHabits.filter((h) => h.done === true);
+				setPercentage(Math.round(100 * (checked.length / dayHabits.length)));
 			})
 			.catch((err) => {
 				alert('Erro! Tente novamente!');
