@@ -32,8 +32,6 @@ const Today = () => {
 			)
 			.then((res) => {
 				setDayHabits(res.data);
-				const checked = dayHabits.filter((h) => h.done === true);
-				setPercentage(Math.round(100 * (checked.length / dayHabits.length)));
 			})
 			.catch((err) => {
 				alert('Erro! Tente novamente!');
@@ -59,10 +57,6 @@ const Today = () => {
 				newHabit.done = true;
 				setDayHabits([...newDayHabits, newHabit]);
 			})
-            .then((res) => {
-				const checked = dayHabits.filter((h) => h.done === true);
-				setPercentage(Math.round(100 * (checked.length / dayHabits.length)));
-			})
 			.catch((err) => {
 				alert('Erro! Tente Novamente!');
 			});
@@ -86,10 +80,6 @@ const Today = () => {
 			.then((res) => {
 				newHabit.done = false;
 				setDayHabits([...newDayHabits, newHabit]);
-			})
-            .then((res) => {
-				const checked = dayHabits.filter((h) => h.done === true);
-				setPercentage(Math.round(100 * (checked.length / dayHabits.length)));
 			})
 			.catch((err) => {
 				alert('Erro! Tente Novamente!');
@@ -117,6 +107,7 @@ const Today = () => {
 			</Container>
 			{dayHabits.map((h) => (
 				<DayHabit
+					habits={dayHabits}
 					onClick={
 						h.done
 							? () => handleUncheck(h.id)

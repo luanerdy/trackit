@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Container from '../../general/Container';
 import { FiCheck } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
 import Message from '../../general/Message';
+import UserContext from '../../../contexts/UserContext';
 
-const DayHabit = ({ name, done, currentSequence, highestSequence, onClick }) => {
+const DayHabit = ({
+	name,
+	done,
+	currentSequence,
+	highestSequence,
+	onClick,
+	habits,
+}) => {
+	const {setPercentage} = useContext(UserContext);
+
+	useEffect(() => {
+		const checked = habits.filter((h) => h.done === true);
+		setPercentage(Math.round(100 * (checked.length / habits.length)));
+	}, [habits]);
+
 	return (
 		<Container
 			horizontal
@@ -28,8 +43,8 @@ const DayHabit = ({ name, done, currentSequence, highestSequence, onClick }) => 
 				</Container>
 			</Container>
 			<Container
-                cursor="pointer"
-                onClick={onClick}
+				cursor="pointer"
+				onClick={onClick}
 				bgColor={done ? '#8FC549' : '#EBEBEB'}
 				width="80px"
 				height="70px"
