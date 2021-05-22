@@ -11,7 +11,7 @@ import Today from './components/Today';
 
 const App = () => {
 	const [userData, setUserData] = useState('');
-	const [percentage, setPercentage] = useState(50);
+	const [percentage, setPercentage] = useState(0);
 
 	const verifyLogin = (history) => {
 		const user = window.localStorage.getItem('user');
