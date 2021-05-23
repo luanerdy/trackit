@@ -8,7 +8,6 @@ import UserContext from '../../../contexts/UserContext';
 
 const CreateHabit = ({ setCreate }) => {
 	const dayList = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
-	const dayMap = [7,1,2,3,4,5,6];
     const {userData: {token}} = useContext(UserContext);
 	const [days, setDays] = useState([]);
 	const [habitName, setHabitName] = useState('');
@@ -69,7 +68,7 @@ const CreateHabit = ({ setCreate }) => {
 							{dayList.map((day, index) => (
 								<Input
 									disabled={disabled}
-									onClick={() => toggleDay(dayMap[index])}
+									onClick={() => toggleDay(index)}
 									type="button"
 									key={index}
 									text={day}
@@ -79,12 +78,12 @@ const CreateHabit = ({ setCreate }) => {
 									cursor="pointer"
 									data={{ value: dayList[index] }}
 									color={
-										days.includes(dayMap[index])
+										days.includes(index)
 											? '#cfcfcf'
 											: 'white'
 									}
 									fColor={
-										days.includes(dayMap[index])
+										days.includes(index)
 											? 'white'
 											: '#cfcfcf'
 									}

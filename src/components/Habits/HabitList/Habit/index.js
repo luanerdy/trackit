@@ -6,7 +6,6 @@ import Button from '../../../general/Button';
 
 const Habit = ({ name, days, onClick }) => {
 	const dayList = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
-	const dayMap = [7,1,2,3,4,5,6];
 
 	return (
 		<Container
@@ -27,10 +26,10 @@ const Habit = ({ name, days, onClick }) => {
 							width={30}
 							height={30}
 							color={
-								days.includes(dayMap[index]) ? '#cfcfcf' : 'white'
+								days.includes(index) ? '#cfcfcf' : 'white'
 							}
 							fColor={
-								days.includes(dayMap[index]) ? 'white' : '#cfcfcf'
+								days.includes(index) ? 'white' : '#cfcfcf'
 							}
 							border="1px solid #cfcfcf"
 						/>
