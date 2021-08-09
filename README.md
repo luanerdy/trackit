@@ -1,6 +1,5 @@
 # ![icon](./public/img/icon.svg)
 # App para gerenciamento de hábitos
-### Criado na semana 10 do bootcamp Responde Aí
 ## Tecnologias Utilizadas:
 |HTML|CSS|JavaScript|ReactJS|
 |-|-|-|-|
